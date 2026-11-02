@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotel am Elbufer – Hamburg Finkenwerder</title>
+<meta name="description" content="Hotel am Elbufer in Hamburg: Zimmer mit Elbblick, Frühstück im ersten Obergeschoss, Hafen und Elbe vor der Tür.">
+<style>
+:root{
+  --navy:#0e2a3f; --navy2:#17435f; --sand:#f6f1e9; --paper:#fffdf9; --ink:#1b2a35;
+  --muted:#52626e; --gold:#b8863b; --gold-d:#8a5f1f; --line:#e4dccd;
+  --radius:18px; --shadow:0 10px 30px rgba(14,42,63,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+header.nav{position:sticky;top:0;z-index:10;background:rgba(255,253,249,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:Georgia,serif;font-size:1.25rem;font-weight:700;letter-spacing:.03em;text-decoration:none;color:var(--navy)}
+.logo span{color:var(--gold)}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;font-size:.95rem;color:var(--muted)}
+nav a:hover,nav a:focus-visible{color:var(--navy)}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;background:var(--gold-d);color:#fff;text-decoration:none;font-weight:600;border:2px solid var(--gold-d);transition:.2s}
+.btn:hover,.btn:focus-visible{background:var(--navy);border-color:var(--navy)}
+.btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.btn.ghost:hover{background:#fff;color:var(--navy)}
+.actions{display:flex;align-items:center;gap:10px}
+.share{position:relative}
+.btn.share-btn{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--navy);border-color:var(--navy);font:inherit;font-weight:600;cursor:pointer;padding:11px 20px}
+.btn.share-btn:hover,.btn.share-btn:focus-visible,.btn.share-btn[aria-expanded="true"]{background:var(--navy);color:#fff}
+.share-menu{position:absolute;right:0;top:calc(100% + 10px);min-width:190px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:6px;display:flex;flex-direction:column;z-index:20}
+.share-menu[hidden]{display:none}
+.share-menu a,.share-menu button{display:block;width:100%;text-align:left;padding:11px 14px;border:0;background:none;border-radius:10px;font:inherit;color:var(--ink);text-decoration:none;cursor:pointer}
+.share-menu a:hover,.share-menu button:hover,.share-menu a:focus-visible,.share-menu button:focus-visible{background:var(--sand)}
+.sr-status{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--navy);color:#fff;padding:10px 18px;border-radius:999px;font-size:.92rem;box-shadow:var(--shadow);z-index:30;opacity:0;pointer-events:none;transition:opacity .2s}
+.sr-status.on{opacity:1}
+.hero{position:relative;color:#fff;min-height:84vh;display:flex;align-items:center;overflow:hidden;
+  background:linear-gradient(180deg,rgba(14,42,63,.55),rgba(14,42,63,.85)),linear-gradient(135deg,#17435f,#0e2a3f 60%,#27597a)}
+.hero svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:auto;opacity:.9}
+.hero .wrap{position:relative;padding-top:60px;padding-bottom:140px}
+.eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:.8rem;color:#e8c98d;margin:0 0 14px}
+h1{font-family:Georgia,serif;font-size:clamp(2.3rem,6vw,4.2rem);line-height:1.1;margin:0 0 18px;max-width:14ch}
+.hero p.lead{font-size:1.2rem;max-width:46ch;margin:0 0 28px;color:#e8eef2}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+section{padding:80px 0}
+section.alt{background:var(--sand)}
+h2{font-family:Georgia,serif;font-size:clamp(1.7rem,4vw,2.4rem);color:var(--navy);margin:0 0 12px}
+.sub{color:var(--muted);max-width:60ch;margin:0 0 40px}
+.grid{display:grid;gap:22px}
+.g4{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.card h3{margin:14px 0 6px;font-size:1.15rem;color:var(--navy)}
+.card p{margin:0;color:var(--muted);font-size:.97rem}
+.thumb{height:130px;border-radius:12px;background:linear-gradient(135deg,var(--navy2),var(--navy))}
+.thumb.t2{background:linear-gradient(135deg,#27597a,#b8863b)}
+.thumb.t3{background:linear-gradient(135deg,#3a7192,#17435f)}
+.thumb.t4{background:linear-gradient(135deg,#8a5f1f,#0e2a3f)}
+.tag{display:inline-block;margin-top:12px;font-size:.78rem;padding:3px 10px;border-radius:999px;background:var(--sand);color:var(--gold-d);font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.visual{aspect-ratio:4/3;border-radius:var(--radius);background:linear-gradient(160deg,#27597a,#0e2a3f);box-shadow:var(--shadow);position:relative;overflow:hidden}
+.visual::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:repeating-linear-gradient(180deg,rgba(255,255,255,.12) 0 2px,transparent 2px 14px)}
+.photo{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow)}
+.banner{display:block;width:100%;height:110px;object-fit:cover;border-radius:var(--radius);margin:0 0 28px;box-shadow:var(--shadow)}
+.facts{list-style:none;padding:0;margin:20px 0 0}
+.facts li{padding:10px 0;border-bottom:1px solid var(--line)}
+.facts b{color:var(--navy)}
+.contact{background:var(--navy);color:#fff}
+.contact h2{color:#fff}
+.contact .sub{color:#c9d6de}
+.contact .card{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18);box-shadow:none}
+.contact .card h3{color:#e8c98d}
+.contact .card p,.contact .card a{color:#f0f4f7}
+footer{background:#081b29;color:#b9c6cf;padding:34px 0;font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
+footer a{color:#e8c98d}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+@media(max-width:800px){
+  nav ul{display:none}
+  .share-label{display:none}
+  .btn.share-btn{padding:11px 13px}
+  .two{grid-template-columns:1fr}
+  section{padding:56px 0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">Hotel am <span>Elbufer</span></a>
+    <nav aria-label="Hauptmenü">
+      <ul>
+        <li><a href="#zimmer">Zimmer</a></li>
+        <li><a href="#hotel">Hotel</a></li>
+        <li><a href="#lage">Lage</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="actions">
+      <div class="share">
+        <button type="button" class="btn share-btn" id="shareBtn" aria-haspopup="true" aria-expanded="false" aria-controls="shareMenu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+          <span class="share-label">Teilen</span>
+        </button>
+        <div class="share-menu" id="shareMenu" role="menu" hidden>
+          <a role="menuitem" id="shWa" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a role="menuitem" id="shMail">E-Mail</a>
+          <button role="menuitem" type="button" id="shCopy">Link kopieren</button>
+        </div>
+      </div>
+      <a class="btn" href="https://www.hotel-am-elbufer.de/deutsch/reservierung/" target="_blank" rel="noopener noreferrer">Reservieren</a>
+    </div>
+  </div>
+</header>
+<div id="shareStatus" class="sr-status" role="status" aria-live="polite"></div>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Hamburg · Finkenwerder</p>
+      <h1>Ankommen. Wohlfühlen. Elbe sehen.</h1>
+      <p class="lead">Elegant eingerichtete Zimmer, Frühstück mit Blick auf den Fluss und der Hamburger Hafen direkt vor der Tür.</p>
+      <div class="cta">
+        <a class="btn" href="https://www.hotel-am-elbufer.de/deutsch/reservierung/" target="_blank" rel="noopener noreferrer">Jetzt reservieren</a>
+        <a class="btn ghost" href="#zimmer">Zimmer ansehen</a>
+      </div>
+    </div>
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path fill="#fffdf9" d="M0 70c120 30 240 30 360 0s240-30 360 0 240 30 360 0 240-30 360 0v50H0z"/></svg>
+  </div>
+
+  <section id="zimmer">
+    <div class="wrap">
+      <h2>Unsere Zimmer</h2>
+      <p class="sub">Vier Kategorien – vom Standardzimmer bis zur Juniorsuite. Details und aktuelle Preise finden Sie auf der Hotelseite.</p>
+      <div class="grid g4">
+        <article class="card"><div class="thumb" role="img" aria-label="Platzhalter Juniorsuite"></div><h3>Juniorsuite</h3><p>Unser großzügigster Rückzugsort.</p><a class="tag" href="https://www.hotel-am-elbufer.de/deutsch/zimmer/" target="_blank" rel="noopener noreferrer">Details ↗</a></article>
+        <article class="card"><div class="thumb t2" role="img" aria-label="Platzhalter Elbblick mit Dachterrasse"></div><h3>Elbblick &amp; Dachterrasse</h3><p>Zimmer mit Blick auf die Elbe und eigener Terrasse.</p><a class="tag" href="https://www.hotel-am-elbufer.de/deutsch/zimmer/" target="_blank" rel="noopener noreferrer">Details ↗</a></article>
+        <article class="card"><div class="thumb t3" role="img" aria-label="Platzhalter Elbblick"></div><h3>Zimmer mit Elbblick</h3><p>Aufwachen mit Blick auf den Fluss.</p><a class="tag" href="https://www.hotel-am-elbufer.de/deutsch/zimmer/" target="_blank" rel="noopener noreferrer">Details ↗</a></article>
+        <article class="card"><div class="thumb t4" role="img" aria-label="Platzhalter Standardzimmer"></div><h3>Standardzimmer</h3><p>Elegant, ruhig und gut gelegen.</p><a class="tag" href="https://www.hotel-am-elbufer.de/deutsch/zimmer/" target="_blank" rel="noopener noreferrer">Details ↗</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="hotel" class="alt">
+    <div class="wrap two">
+      <div>
+        <h2>Das Hotel</h2>
+        <p class="sub" style="margin-bottom:0">Persönlich geführt, mit Rezeption, kleiner Bar und einem Frühstücksraum im ersten Obergeschoss – mit Elbblick und der Elbchaussee im Hintergrund.</p>
+        <ul class="facts">
+          <li><b>Rezeption</b> – Schlüsselausgabe und persönliche Beratung</li>
+          <li><b>Frühstücksraum</b> – 1. Obergeschoss, Blick auf die Elbe</li>
+          <li><b>Bar</b> – für den Abend nach dem Hafenbummel</li>
+        </ul>
+      </div>
+      <img class="photo" src="img/teaser.jpg" width="900" height="675" loading="lazy" alt="Backsteinfassade des Hotels am Elbufer mit rotem Oldtimer-Bulli vor dem Eingang">
+    </div>
+  </section>
+
+  <section id="lage">
+    <div class="wrap">
+      <h2>Hafen, Fähre, Großschiffe</h2>
+      <p class="sub">Die Lage am Elbufer macht das Hotel zum Ausgangspunkt für Hamburgs maritime Seite.</p>
+      <img class="banner" src="img/header.jpg" width="960" height="50" loading="lazy" alt="Großes Kreuzfahrtschiff auf der Elbe vor dem Ufer">
+      <div class="grid g3">
+        <article class="card"><h3>Hafen Hamburg</h3><p>Containerriesen und Kreuzfahrtschiffe aus nächster Nähe.</p></article>
+        <article class="card"><h3>Finkenwerder</h3><p>Fischerdorf-Flair, Airbus-Werk und Elbstrand.</p></article>
+        <article class="card"><h3>Freizeit &amp; Kultur</h3><p>Events, Ausflugstipps und nützliche Apps für Ihren Aufenthalt.</p>
+        <a class="tag" href="https://www.hotel-am-elbufer.de/deutsch/impressionen/" target="_blank" rel="noopener noreferrer">Impressionen ↗</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="contact">
+    <div class="wrap">
+      <h2>Kontakt &amp; Anreise</h2>
+      <p class="sub">Telefonisch erreichen Sie uns vormittags von 8:00 bis 13:00 Uhr. Außerhalb dieser Zeiten freuen wir uns über Ihre E-Mail oder Online-Reservierung.</p>
+      <div class="grid g3">
+        <div class="card"><h3>Adresse</h3><p>Hotel am Elbufer<br>Focksweg 40a<br>21129 Hamburg</p></div>
+        <div class="card"><h3>Telefon</h3><p><a href="tel:+49407421910">+49 40 74 21 91-0</a><br>täglich 8:00–13:00 Uhr</p></div>
+        <div class="card"><h3>Reservierung</h3><p><a href="https://www.hotel-am-elbufer.de/deutsch/reservierung/" target="_blank" rel="noopener noreferrer">Online reservieren ↗</a><br><a href="https://www.hotel-am-elbufer.de/deutsch/kontakt/" target="_blank" rel="noopener noreferrer">Kontaktformular ↗</a></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Adagio Hotelbetriebsgesellschaft m.b.H. · Entwurf Neugestaltung</span>
+    <span>
+      <a href="https://www.hotel-am-elbufer.de/deutsch/impressum/" target="_blank" rel="noopener noreferrer">Impressum</a> ·
+      <a href="https://www.hotel-am-elbufer.de/deutsch/agb-dsgvo/" target="_blank" rel="noopener noreferrer">AGB / DSGVO</a>
+    </span>
+    <span>Version 1.1.0 · <a href="https://nosz.github.io/norbert-szpak/" target="_blank" rel="noopener noreferrer">Website Design by Norbert</a></span>
+  </div>
+</footer>
+<script>
+(function(){
+  var btn=document.getElementById('shareBtn'), menu=document.getElementById('shareMenu'),
+      status=document.getElementById('shareStatus'), timer;
+  var title='Hotel am Elbufer – Hamburg Finkenwerder';
+  var text='Hotel am Elbufer in Hamburg: Zimmer mit Elbblick, Frühstück und Hafen vor der Tür.';
+  function url(){ return location.href.split('#')[0]; }
+  function say(msg){
+    status.textContent=msg; status.classList.add('on');
+    clearTimeout(timer); timer=setTimeout(function(){ status.classList.remove('on'); },2600);
+  }
+  function close(focusBtn){
+    menu.hidden=true; btn.setAttribute('aria-expanded','false');
+    if(focusBtn) btn.focus({preventScroll:true});
+  }
+  function open(){
+    document.getElementById('shWa').href='https://wa.me/?text='+encodeURIComponent(text+' '+url());
+    document.getElementById('shMail').href='mailto:?subject='+encodeURIComponent(title)+'&body='+encodeURIComponent(text+'\n\n'+url());
+    menu.hidden=false; btn.setAttribute('aria-expanded','true');
+    var first=menu.querySelector('[role=menuitem]'); if(first) first.focus({preventScroll:true});
+  }
+  function copy(){
+    function ok(){ say('Link kopiert ✓'); close(true); }
+    function fail(){ window.prompt('Link zum Kopieren:',url()); close(true); }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url()).then(ok,fail);
+    } else fail();
+  }
+  btn.addEventListener('click',function(){
+    if(navigator.share && window.matchMedia('(pointer:coarse)').matches){
+      navigator.share({title:title,text:text,url:url()}).catch(function(){ /* Abbruch ist kein Fehler */ });
+      return;
+    }
+    if(menu.hidden) open(); else close(true);
+  });
+  document.getElementById('shCopy').addEventListener('click',copy);
+  document.addEventListener('click',function(e){
+    if(!menu.hidden && !e.target.closest('.share')) close(false);
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape' && !menu.hidden) close(true);
+  });
+})();
+</script>
+</body>
+</html>
